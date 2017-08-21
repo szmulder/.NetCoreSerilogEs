@@ -1,0 +1,22 @@
+﻿{
+  "Serilog": {
+    "WriteTo": [
+      {
+        "Name": "Elasticsearch",
+        "Args": {
+          "nodeUris": "http://localhost:9200",
+          "indexFormat": "logstash-{0:yyyy.MM.dd}",
+          "templateName": "myCustomTemplate",
+          "typeName": "Netcore_log",
+          "batchPostingLimit": 50,
+          "period": 100,
+          "inlineFields": true,
+          "minimumLogEventLevel": "Warning",
+          "bufferBaseFilename": "C:/Temp/LogDigipolis/docker-elk-serilog-web-buffer",
+          "bufferFileSizeLimitBytes": 5242880,
+          "bufferLogShippingInterval": 5000
+        }
+      }
+    ]
+  }
+}
